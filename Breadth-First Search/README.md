@@ -6,28 +6,9 @@
 
 =========================================================
 
-Project Title
-Brief description of the project
+# Breadth-First Search
+Here, we are using an adjacency matrix to represent the graph. We initialize an array visited to mark which nodes have been visited, and a queue to store nodes that need to be processed. The enqueue and dequeue functions are used to add nodes to the queue and remove nodes from it, respectively.
 
-Table of Contents
-Installation
-Usage
-Contributing
-License
-Installation
-Provide step-by-step instructions on how to install and run the project. Include any dependencies that need to be installed and how to install them.
+The bfs function performs the actual Breadth-First Search. We start by marking the starting node as visited and enqueueing it. Then we repeatedly dequeue a node from the queue, print its value, and enqueue all its unvisited neighbors. We continue this process until the queue is empty.
 
-bash
-Copy code
-example command
-Usage
-Provide instructions on how to use the project. Include examples of how to use any command-line interfaces or APIs.
-
-python
-Copy code
-example code
-Contributing
-Explain how others can contribute to the project. Provide information on submitting bug reports, suggesting improvements, and contributing code.
-
-License
-Include information on the project's license. If the project is open source, include information on how others can use and distribute the code.
+In the main function, we take the input for the graph and the starting node, and then call bfs to perform the Breadth-First Search.
