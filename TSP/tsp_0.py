@@ -15,13 +15,16 @@ def distance(city1, city2):
     return d
 
 def find_shortest_route(cities):
+# Generate all possible permutations of the cities    
     routes = list(itertools.permutations(cities))
+    # Calculate the total distance traveled for each permutation
     distances = []
     for route in routes:
         total_distance = 0
         for i in range(len(route)-1):
             total_distance += distance(route[i], route[i+1])
         distances.append(total_distance)
+        # Return the route with the shortest distance traveled
     shortest_distance = min(distances)
     shortest_route = routes[distances.index(shortest_distance)]
     return shortest_route, shortest_distance
@@ -38,5 +41,5 @@ cities = [('New York', 40.7128, -74.0060),
           ('San Jose', 37.3382, -121.8863)]
 
 shortest_route, shortest_distance = find_shortest_route(cities)
-print('Shortest route:', shortest_route)
-print('Shortest distance:', shortest_distance, 'km')
+print('Shortest route:\n\n', shortest_route)
+print('Shortest distance:', shortest_distance, 'km\n')
